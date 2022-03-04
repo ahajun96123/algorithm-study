@@ -1,0 +1,6 @@
+j = int(input())
+if j >= 90: print("A")
+elif j >= 80: print("B")
+elif j >= 70: print("C")
+elif j >= 60: print("D")
+else: print("F")

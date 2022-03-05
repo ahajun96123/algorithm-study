@@ -12,4 +12,5 @@ C++을 사용하고 있고 cin/cout을 사용하고자 한다면, cin.tie(NULL)�
 Java를 사용하고 있다면, Scanner와 System.out.println 대신 BufferedReader와 BufferedWriter를 사용할 수 있다. BufferedWriter.flush는 맨 마지막에 한 번만 하면 된다.
 
 Python을 사용하고 있다면, input 대신 sys.stdin.readline()을 사용할 수 있다. 단, 이때는 맨 끝의 개행문자까지 같이 입력받기 때문에 문자열을 저장하고 싶을 경우 .rstrip()을 추가로 해 주는 것이 좋다.<br>
+<b><i>빠른 입출력이 필요 없어도 계속 써서 손에 익히자!</i></b><br>
 <sub>출처 : 백준 15552</sub>

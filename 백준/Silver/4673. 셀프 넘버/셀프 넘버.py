@@ -1,11 +1,3 @@
-a = list(range(1, 10001))
-for n in range(1, 10000):
-  s = str(n)
-  m = n
-  for c in s:
-    m += int(c)
-  try:
-    a.remove(m)
-  except: pass
-for n in a:
-  print(n)
+natural = set(range(10001))
+not_self = {sum(map(int, str(i)))+i for i in range(10000)}
+print(*sorted(natural - not_self), sep='\n')

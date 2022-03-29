@@ -1,8 +1,9 @@
-l = [1]*10000
-l[1] = 0
-for i in range(2, 100):
-  for j in range(i*2, 10000, i):
-    l[j] = 0
+l = [0]*10000
+for i in range(2, 10000):
+  for j in range(2, int(i**0.5+1)):
+    if i%j == 0:
+      break
+  else: l[i] = 1
 for _ in range(int(input())):
   n = int(input())
   for i in range(n//2, 1, -1):

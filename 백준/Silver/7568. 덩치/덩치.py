@@ -1,18 +1,11 @@
-N = int(input())
+n = int(input())
+l = []
+for _ in range(n):
+  l.append(list(map(int, input().split())))
 
-people = []
-for _ in range(N):
-  w, h = map(int, input().split())
-  people.append((w, h))
-
-for c in people : #0
-  rank = 1 #1 
-    
-  for n in people:
-    if (c[0]!=n[0]) & (c[1]!=n[1]): #2  
-      if (c[0]<n[0]) & (c[1]<n[1]): #3 w, h 모두 큰 경우
-        rank += 1
-          
-  print(rank)
-
-# https://roseline124.github.io/algorithm/2019/04/06/Altorithm-baekjoon-7568.html
+for d in l:
+  r = 1
+  for i in range(n):
+    if l[i][0] > d[0] and l[i][1] > d[1]:
+      r+=1
+  print(r)

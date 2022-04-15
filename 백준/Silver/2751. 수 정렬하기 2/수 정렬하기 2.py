@@ -1,6 +1,4 @@
 import sys
 input = sys.stdin.readline
-l = []
-for _ in range(int(input())):
-  l.append(int(input()))
+l = [int(input()) for _ in range(int(input()))]
 print(*sorted(l))

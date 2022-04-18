@@ -21,13 +21,8 @@ for i in range(1, n):
   if i == n-1 :
     stack[cnt].append(l[i])
     if m_cnt < cnt : m_cnt = cnt
-if n == 1 :
-	stack[1].append(l[0])
-
-stack[m_cnt].sort()
-if len(stack[m_cnt]) == 1 :
-	print(stack[m_cnt][0])
-else :
-	print(stack[m_cnt][1])
+li = stack[m_cnt]
+if len(li)==0: li = [l[0]]
+print(li[0] if len(li)==1 else li[1])
 
 print(l[-1] - l[0])

@@ -1,4 +1,5 @@
 import sys
+from collections import Counter as c
 input = sys.stdin.readline
 n = int(input())
 l = []
@@ -9,20 +10,8 @@ l.sort()
 print(round(sum(l)/n))
 print(l[n//2])
 
-cnt, m_cnt = 1, 1
-stack = {i:[] for i in range(1, n+1)}
-for i in range(1, n):
-  if l[i] == l[i-1]: cnt+=1
-  else:
-    if cnt >= m_cnt:
-      m_cnt = cnt
-      stack[m_cnt].append(l[i-1])
-    cnt = 1
-  if i == n-1 :
-    stack[cnt].append(l[i])
-    if m_cnt < cnt : m_cnt = cnt
-li = stack[m_cnt]
-if len(li)==0: li = [l[0]]
-print(li[0] if len(li)==1 else li[1])
+f = c(l).most_common(2)
+
+print(f[0][0] if len(f)==1 else f[0][0] if f[0][1]>f[1][1] else f[1][0])
 
 print(l[-1] - l[0])

@@ -1,3 +1,3 @@
 import sys
-input = lambda: sys.stdin.readline().rstrip()
-print(*sorted(list(set(input()for _ in range(int(input())))),key=lambda x: (len(x), x)))
+N = lambda: sys.stdin.readline().rstrip()
+print(*sorted(list(set(N()for _ in range(int(N())))),key=lambda x: (len(x), x)))

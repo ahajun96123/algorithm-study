@@ -1,6 +1,5 @@
-n = int(input())
+input()
 l = list(map(int, input().split()))
-l_s = sorted(set(l))
-dic = {k:v for v, k in enumerate(l_s)}
+dic = {k:v for v, k in enumerate(sorted(set(l)))}
 for i in l:
   print(dic[i])

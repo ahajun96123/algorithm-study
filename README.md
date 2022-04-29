@@ -15,3 +15,7 @@ Python을 사용하고 있다면, input 대신 sys.stdin.readline()을 사용할
 <b><i>빠른 입출력이 필요 없어도 계속 써서 손에 익히자!</i></b><br>
 <sub>출처 : 백준 15552</sub>
 <br><br>python에서 eof 문제는 while, try, except를 사용해서 풀기
+
+<br><br><br>
+어려웠던 것<br>
+2981. 공통 나머지인 수 구하기. 수학적 사고를 요구함.

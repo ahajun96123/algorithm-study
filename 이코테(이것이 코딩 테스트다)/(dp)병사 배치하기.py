@@ -1,6 +1,11 @@
 # https://youtu.be/5Lu34WIx2Us?t=3590
 # dp 테이블의 현재 index 앞쪽을 모두 검사해야 하는 문제
 
+# 테스트케이스
+# 10
+# 15 11 7 6 5 4 8 5 2 4
+# 7
+# 15 11 4 8 5 2 4
 
 n = int(input())
 l = list(map(int, input().split()))

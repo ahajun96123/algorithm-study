@@ -17,8 +17,9 @@ Python을 사용하고 있다면, input 대신 sys.stdin.readline()을 사용할
 <br><br>python에서 eof 문제는 while, try, except를 사용해서 풀기
 
 #
-<h4><i>팁</i></h4>
-python에서 map 함수를 reduce나 map에 다시 넣을 수 없다.(list나 다른 형태로 변환 필요) for문에서는 사용 가능. 함수만 안 되는듯 하다.
+<h4><i>python 팁</i></h4>
+map 함수를 reduce나 map에 다시 넣을 수 없다.(list나 다른 형태로 변환 필요) for문에서는 사용 가능. 함수만 안 되는듯 하다.<br>
+리스트에서 l=[[0]*m]*n 이런 식으로 초기화하면 l[i][j]을 바꿀때 l[i보다 작은 인덱스][j]도 다 바뀜. 아마 l=m(다른리스트)로 적으면 l,m 둘 중 하나가 바뀌면 다른것도 바뀌는 그런 주소참조 개념인듯. 그러므로 2차원 배열 초기화는 for문을 쓰거나 append 하자.
 
 #
 <h4><i>어려웠던 것</i></h4>

@@ -1,14 +1,7 @@
-n = input()
-le = len(n)
-n = int(n)
-
-start = n - le * 9
-if start < 0: start = 0
-answer = 0
-for i in range(start, n):
-  s = str(i)
-  hap = i + sum(map(int, s))
-  if hap == n:
-    answer = i
-    break
-print(answer)
+n = int(input())
+m = len(str(n))
+ans = 0
+start = max(n-m*9, 1)
+for i in range(start, n+1):
+  if n == i + sum(map(int, str(i))): ans = i;break
+print(ans)

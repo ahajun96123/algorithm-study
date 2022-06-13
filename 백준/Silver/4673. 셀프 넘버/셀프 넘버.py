@@ -1,3 +1,10 @@
-natural = set(range(10001))
-not_self = {sum(map(int, str(i)))+i for i in range(10000)}
-print(*sorted(natural - not_self), sep='\n')
+n = 0
+ans = [0]*10100
+for i in range(1, 10001):
+  t = i
+  while i:
+    t += i%10
+    i //= 10
+  ans[t] = 1
+for i in range(1, 10001):
+  if ans[i]==0: print(i)

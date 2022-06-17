@@ -1,4 +1,14 @@
-from itertools import combinations
 n, m = map(int, input().split())
-l = list(range(1, n+1))
-for cur in combinations(l, m): print(*cur)
+stack = []
+
+def re(start, end):
+  if len(stack)==m:
+    print(*stack)
+    return
+    
+  for i in range(start, end):
+    stack.append(i)
+    re(i+1, end + 1)
+    stack.pop()
+
+re(1, n-m+2)

@@ -13,26 +13,30 @@ br = False
 q = deque()
 q.append((0, 0))
 l[0][0] = 2
-dd = [input().rstrip().split() for _ in range(int(input()))]
-# for _ in range(int(input())):
-for con, d in dd:
-  # con, d = input().rstrip().split()
+
+def isPossible(nr, nc):
+  # 벽이거나 자신일때
+  return nr<0 or nr>=n or nc<0 or nc>=n or l[nr][nc]==2
+
+def move(nr, nc):
+  global r, c, cnt
+  # 사과가 아닐때
+  if l[nr][nc]!=1:
+    tr, tc = q.popleft()
+    l[tr][tc] = 0
+  l[nr][nc] = 2
+  q.append((nr, nc))
+  r, c = nr, nc
+  cnt += 1
+
+for _ in range(int(input())):
+  con, d = input().rstrip().split()
   for i in range(int(con) - cnt):
     nr, nc = r + dr[dir], c + dc[dir]
-    # print(cnt, nr, nc, q)
-    # 벽이거나 자신일때
-    if nr<0 or nr>=n or nc<0 or nc>=n or l[nr][nc]==2:
+    if isPossible(nr, nc):
       br = True
       break
-    # 사과가 아닐때
-    if l[nr][nc]!=1:
-      tr, tc = q.popleft()
-      l[tr][tc] = 0
-    l[nr][nc] = 2
-    q.append((nr, nc))
-    r, c = nr, nc
-    cnt += 1
-  # print('turn')
+    move(nr, nc)
   if br: break
 
   if d=='D': dir = (dir + 1) % 4
@@ -41,13 +45,7 @@ for con, d in dd:
 if not br:
   while 1:
     nr, nc = r + dr[dir], c + dc[dir]
-    if nr<0 or nr>=n or nc<0 or nc>=n or l[nr][nc]==2: break
-    if l[nr][nc]!=1:
-      tr, tc = q.popleft()
-      l[tr][tc] = 0
-    l[nr][nc] = 2
-    q.append((nr, nc))
-    r, c = nr, nc
-    cnt += 1
+    if isPossible(nr, nc): break
+    move(nr, nc)
 
 print(cnt+1)

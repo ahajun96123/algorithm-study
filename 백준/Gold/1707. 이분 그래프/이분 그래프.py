@@ -30,5 +30,4 @@ for _ in range(n):
     bin *= dfs(i, 1)
     if not bin: break
   
-  if nv==0 and ne==0: print('NO')
-  else: print('YES' if bin else 'NO')
+  print('YES' if bin else 'NO')
